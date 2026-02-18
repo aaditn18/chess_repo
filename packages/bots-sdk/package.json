@@ -1,0 +1,20 @@
+{
+  "name": "@chess/bots-sdk",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "pnpm run typecheck",
+    "lint": "pnpm run typecheck",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@chess/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

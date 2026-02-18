@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@chess/contracts": ["packages/contracts/src/index.ts"],
+      "@chess/engine-wasm": ["packages/engine-wasm/src/index.ts"],
+      "@chess/mode-registry": ["packages/mode-registry/src/index.ts"],
+      "@chess/variant-normal": ["packages/variant-normal/src/index.ts"],
+      "@chess/variant-antichess": ["packages/variant-antichess/src/placeholder.ts"],
+      "@chess/variant-nd": ["packages/variant-nd/src/placeholder.ts"],
+      "@chess/bots-sdk": ["packages/bots-sdk/src/interface.ts"]
+    }
+  }
+}

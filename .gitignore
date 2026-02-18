@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+.pnpm-store
+.turbo
+dist
+coverage
+*.log
+
+# Rust
+target
+**/*.rs.bk
+
+# Vite / TS build
+*.tsbuildinfo
+
+# Generated WASM artifacts
+packages/engine-wasm/pkg

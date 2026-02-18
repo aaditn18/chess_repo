@@ -1,0 +1,13 @@
+{
+  "name": "@chess/config",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node -e \"import('./eslint/index.js').then(() => {})\"",
+    "typecheck": "node -e \"import('./eslint/index.js').then(() => {})\"",
+    "test": "node -e \"import('./eslint/index.js').then(() => {})\"",
+    "lint": "node -e \"import('./eslint/index.js').then(() => {})\"",
+    "clean": "echo 'config clean noop'"
+  }
+}
