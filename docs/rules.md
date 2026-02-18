@@ -508,3 +508,35 @@ Define mandatory operating rules for planning and implementation so each prompt 
 - blockers_or_risks: No active blockers; wasm-pack still emits a non-blocking version warning during wasm builds.
 - files_touched: `/Users/aaditnilay/Documents/chess_repo/packages/engine-wasm/test/runtime.test.mjs`; `/Users/aaditnilay/Documents/chess_repo/scripts/mvp-finalize.mjs`; `/Users/aaditnilay/Documents/chess_repo/package.json`; `/Users/aaditnilay/Documents/chess_repo/README.md`; `/Users/aaditnilay/Documents/chess_repo/docs/mvp-acceptance.md`; `/Users/aaditnilay/Documents/chess_repo/docs/reports/mvp-readiness-2026-02-16.md`; `/Users/aaditnilay/Documents/chess_repo/docs/reports/mvp-readiness-latest.md`; `/Users/aaditnilay/Documents/chess_repo/docs/roadmap.md`; `/Users/aaditnilay/Documents/chess_repo/docs/design.md`; `/Users/aaditnilay/Documents/chess_repo/docs/rules.md`.
 - decisions_added_or_changed: M5 completion now requires a generated readiness report from executed checks (`pnpm mvp:finalize`) in addition to checklist/runbook docs; all MVP milestones M0-M5 are now complete.
+
+### PromptTurnRecord: T-0014-BEFORE
+- turn_id: T-0014-BEFORE
+- timestamp_local: 2026-02-18T12:41:40-0500
+- user_prompt_summary: Fix CI pnpm setup error caused by multiple pnpm versions specified.
+- phase: Testing
+- plan_for_this_turn: Remove redundant pnpm version pinning from GitHub Actions and validate workspace still passes full verification.
+- approach_for_this_turn: Update workflow files to rely on `packageManager` in `package.json` as single pnpm version source, then run `pnpm verify:mvp`.
+- progress_before_percent: 100
+- progress_after_percent: 100
+- progress_remaining_percent: 0
+- completed_this_turn: Pre-execution entry only.
+- remaining_tasks: None for MVP scope; maintenance fix only.
+- blockers_or_risks: Current blocker is CI setup failure on `pnpm/action-setup`.
+- files_touched: None.
+- decisions_added_or_changed: None yet.
+
+### PromptTurnRecord: T-0014-AFTER
+- turn_id: T-0014-AFTER
+- timestamp_local: 2026-02-18T12:42:21-0500
+- user_prompt_summary: Fix CI pnpm setup error caused by multiple pnpm versions specified.
+- phase: Testing
+- plan_for_this_turn: Remove redundant pnpm version pinning from GitHub Actions and validate workspace still passes full verification.
+- approach_for_this_turn: Update workflow files to rely on `packageManager` in `package.json` as single pnpm version source, then run `pnpm verify:mvp`.
+- progress_before_percent: 100
+- progress_after_percent: 100
+- progress_remaining_percent: 0
+- completed_this_turn: Removed `version: 10` from `pnpm/action-setup@v4` in both CI workflows so Actions uses the `packageManager` declaration (`pnpm@10.0.0`) as the sole source of truth, then re-ran `pnpm verify:mvp` successfully (lint/test/typecheck/build/Rust tests all passing).
+- remaining_tasks: None for MVP scope.
+- blockers_or_risks: No active blockers.
+- files_touched: `/Users/aaditnilay/Documents/chess_repo/.github/workflows/ci.yml`; `/Users/aaditnilay/Documents/chess_repo/.github/workflows/rust-wasm.yml`; `/Users/aaditnilay/Documents/chess_repo/docs/design.md`; `/Users/aaditnilay/Documents/chess_repo/docs/rules.md`.
+- decisions_added_or_changed: GitHub Actions must not specify a second pnpm version when `packageManager` already pins pnpm; workflow setup now defers pnpm version resolution to `package.json`.
